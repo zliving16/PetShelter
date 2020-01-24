@@ -1,0 +1,13 @@
+<a class="text-right" [routerLink]="['/pets']">Home</a>
+<h4>Details about {{pet.name}}</h4>
+<ul>
+    <li><h5>pet type:</h5> {{pet.type}}</li>
+    <li><h5>pet description:</h5> {{pet.description}}</li>
+    <li><h5>pet skills:</h5> <ul>
+        <li>{{pet.skills.skillOne}}</li>
+        <li> {{pet.skills.skillTwo}}</li>
+        <li> {{pet.skills.skillThree}}</li>
+    </ul></li>
+    <li>pet likes: {{pet.likes}}</li>
+</ul>
+<button *ngIf="!clicked" (click)="incQuote(pet._id,pet.name)">Like this pet</button> <button (click)="Delete(pet._id)" [routerLink]="['/pets']">Addopt this pet</button>

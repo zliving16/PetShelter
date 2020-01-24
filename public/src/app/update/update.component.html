@@ -1,0 +1,59 @@
+<h4>Edit this pet</h4><form>
+    <!-- <p *ngIf="error" style="color: red;">Name must be more than three charactes</p> -->
+    <!-- <span style="color: red;" *ngIf="!name.valid && submitted">Name must be more than three charactes </span>
+    <label  for="newCake.name">Name:</label>
+    <input name="name" value="newCake.name" [(ngModel)]="newCake.name" type="text"  required #name="ngModel" minlength="3" >
+      <br>
+    <label  for="newCake.type">type:</label>
+    <input name="type" value="newCake.type"  [(ngModel)]="newCake.type" type="text" required #type="ngModel" minlength="3" >
+      <br>
+    <label  for="newCake.description">Name:</label>
+    <input name="description" value="newCake.description" [(ngModel)]="newCake.description" type="text"  required #description="ngModel" minlength="3" >
+      <br>
+      <p>Skills(optional):</p>
+    <label  for="newCake.skills.skillOne">skill 1:</label>
+    <input value="newCake.skills.skillOne" name="skillOne" [(ngModel)]="newCake.skills.skillOne" type="text" required #skillOne="ngModel" minlength="3" >
+      <br>
+    <label  for="newCake.skills.skillTwo">skill 2:</label>
+    <input  value="newCake.skills.skillTwo" name="skillTwo" [(ngModel)]="newCake.skills.skillTwo" type="text" required #skillTwo="ngModel" minlength="3" >
+      <br>
+    <label  for="newCake.skills.skillThree">skill 1:</label>
+    <input  value="newCake.skills.skillThree" name="skillThree" [(ngModel)]="newCake.skills.skillThree" type="text" required #skillThree="ngModel" minlength="3" >
+      <br>
+      {{name.errors}}
+      {{name.valid}} <br> -->
+    <!-- <button [routerLink]="['/pets']"> Cancel</button>
+    <button (click)="cakeSubmit(newCake)">Edit pet</button>
+</form> -->
+<form>
+  <span style="color: red;" *ngIf="!name.valid && submitted">Name must be more than three charactes </span>
+  <label  for="newCake.name">Name:</label>
+  <input name="name" [(ngModel)]="newCake.name" type="text"  required #name="ngModel" minlength="3" >
+    <br>
+    <span style="color: red;" *ngIf="!type.valid && submitted">type must be more than three charactes </span>
+
+  <label  for="newCake.type">type:</label>
+  <input name="type" [(ngModel)]="newCake.type" type="text" required #type="ngModel" minlength="3" >
+    <br>
+    <span style="color: red;" *ngIf="!description.valid && submitted">description must be more than three charactes </span>
+
+  <label  for="newCake.description">description:</label>
+  <input [(ngModel)]="newCake.description" type="text" name="description" required #description="ngModel" minlength="3" >
+    <br>
+    <p>Skills:</p>
+  <label  for="newCake.skills.skillOne">skill 1:</label>
+  <input name="newCake.skills.skillOne" [(ngModel)]="newCake.skills.skillOne" type="text">
+    <br>
+  <label  for="newCake.skills.skillTwo">skill 2:</label>
+  <input name="newCake.skills.skillTwo"  [(ngModel)]="newCake.skills.skillTwo" type="text">
+    <br>
+  <label  for="newCake.skills.skillThree">skill 3:</label>
+  <input name="newCake.skills.skillThree" [(ngModel)]="newCake.skills.skillThree" type="text">
+    <br>
+<!--   
+   {{name.errors|json}}
+   {{type.errors|json}}
+   {{description.errors|json}} -->
+  <button [routerLink]="['/pets']"> Cancel</button>
+  <button (click)="cakeSubmit(newCake)">add pet</button>
+</form>
